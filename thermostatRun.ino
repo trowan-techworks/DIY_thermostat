@@ -157,16 +157,15 @@ void loop() {
     Serial.println(message);
     digitalWrite(output, LOW);
     Serial.println("output low");
-    }
+  }
     // Check if temperature is below threshold and if it needs to trigger output
-    else if((temperature < inputMessage.toInt())) {
-      String message = String("Temperature below threshold. Current temperature: ") + 
-                            String(temperature) + String(" F");
-      Serial.println(message);
-      digitalWrite(output, HIGH);
-      Serial.println("output high");
-    }
-
+  else if((temperature < inputMessage.toInt())) {
+    String message = String("Temperature below threshold. Current temperature: ") + 
+                          String(temperature) + String(" F");
+    Serial.println(message);
+    digitalWrite(output, HIGH);
+    Serial.println("output high");
+  }
   display.setTextColor(WHITE); 
   display.setTextSize(1);
   display.setCursor(1,25);
